@@ -16,25 +16,34 @@ Auto-generate Vue 3 CRUD pages from Sequelize models (based on MySQL tables) usi
 ### Setup  
 
 1. **Install dependencies**  
+
 ```bash
 npm install sequelize sqlite3 ejs
 ```
 
 2. **Generate Sequelize models**  
+
 ```bash
 npx sequelize-auto -o "./models" -d dbname -h host -u user -p port -x pass -e mysql
 ```
 
-3. **Create/Update Vue templates**  
+3. **Create/Update Vue templates**
+
+```bash  
 Place or edit `ListView.vue.ejs` and `FormView.vue.ejs` in `/templates`.
+```
 
 4. **Run generator**  
+
 ```bash
 node generate.js
 ```
 
 5. **Use generated files**  
+
+```bash
 Find Vue files in `/output/` and add them to your Vue 3 project.
+```
 
 ---
 
@@ -48,7 +57,7 @@ Find Vue files in `/output/` and add them to your Vue 3 project.
 
 ### Project layout  
 
-```
+```bash
 /models      # Sequelize model files
 /templates   # EJS templates for Vue components
 /output      # Generated Vue files here
