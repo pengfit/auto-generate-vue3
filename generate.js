@@ -40,7 +40,8 @@ fs.readdirSync(modelsDir)
 for (const [modelName, model] of Object.entries(models)) {
   const fields = Object.entries(model.rawAttributes).map(([name, attr]) => ({
     name,
-    type: attr.type.key
+    type: attr.type.key,
+    comment: attr.comment
   }))
 
   const templateData = { tableName: modelName, fields }

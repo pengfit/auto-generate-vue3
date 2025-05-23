@@ -1,197 +1,106 @@
 <template>
   <div>
     <h2 class="text-xl font-bold mb-4">ods_p_station_attr List</h2>
-    
-    <table class="table-auto w-full border">
-      <thead>
-        <tr>
-          
-            <th class="border px-4 py-2 text-left">id</th>
-          
-            <th class="border px-4 py-2 text-left">pch</th>
-          
-            <th class="border px-4 py-2 text-left">oid</th>
-          
-            <th class="border px-4 py-2 text-left">qytyxydm</th>
-          
-            <th class="border px-4 py-2 text-left">xzqhbm</th>
-          
-            <th class="border px-4 py-2 text-left">sjtp_cd</th>
-          
-            <th class="border px-4 py-2 text-left">jsclfs</th>
-          
-            <th class="border px-4 py-2 text-left">sjbgsj</th>
-          
-            <th class="border px-4 py-2 text-left">czbh</th>
-          
-            <th class="border px-4 py-2 text-left">czmc</th>
-          
-            <th class="border px-4 py-2 text-left">czlx_cd</th>
-          
-            <th class="border px-4 py-2 text-left">jcnd</th>
-          
-            <th class="border px-4 py-2 text-left">czdz</th>
-          
-            <th class="border px-4 py-2 text-left">zdmj</th>
-          
-            <th class="border px-4 py-2 text-left">geom</th>
-          
-            <th class="border px-4 py-2 text-left">jzsjylfw</th>
-          
-            <th class="border px-4 py-2 text-left">fzsjylfw</th>
-          
-            <th class="border px-4 py-2 text-left">jgysjl_cd</th>
-          
-            <th class="border px-4 py-2 text-left">geom_bhfw</th>
-          
-            <th class="border px-4 py-2 text-left">zzcqqps</th>
-          
-            <th class="border px-4 py-2 text-left">czfzr</th>
-          
-            <th class="border px-4 py-2 text-left">fzrlxfs</th>
-          
-            <th class="border px-4 py-2 text-left">bz</th>
-          
-            <th class="border px-4 py-2 text-left">jsdw</th>
-          
-            <th class="border px-4 py-2 text-left">jgysrq</th>
-          
-            <th class="border px-4 py-2 text-left">syzt_cd</th>
-          
-            <th class="border px-4 py-2 text-left">bh</th>
-          
-            <th class="border px-4 py-2 text-left">czjz</th>
-          
-            <th class="border px-4 py-2 text-left">fzrq</th>
-          
-            <th class="border px-4 py-2 text-left">dqrq</th>
-          
-            <th class="border px-4 py-2 text-left">rgql</th>
-          
-            <th class="border px-4 py-2 text-left">cqrj</th>
-          
-            <th class="border px-4 py-2 text-left">sjhqfs</th>
-          
-            <th class="border px-4 py-2 text-left">sjtbr</th>
-          
-            <th class="border px-4 py-2 text-left">sjcrsj</th>
-          
-            <th class="border px-4 py-2 text-left">geom_lon</th>
-          
-            <th class="border px-4 py-2 text-left">geom_lat</th>
-          
-            <th class="border px-4 py-2 text-left">geom_bhfw_lon</th>
-          
-            <th class="border px-4 py-2 text-left">geom_bhfw_lat</th>
-          
-            <th class="border px-4 py-2 text-left">sync_status</th>
-          
-            <th class="border px-4 py-2 text-left">locked</th>
-          
-            <th class="border px-4 py-2 text-left">sync_time</th>
-          
-          <th class="border px-4 py-2">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="item in items" :key="item.id">
-          
-            <td class="border px-4 py-2">{{ item.id }}</td>
-          
-            <td class="border px-4 py-2">{{ item.pch }}</td>
-          
-            <td class="border px-4 py-2">{{ item.oid }}</td>
-          
-            <td class="border px-4 py-2">{{ item.qytyxydm }}</td>
-          
-            <td class="border px-4 py-2">{{ item.xzqhbm }}</td>
-          
-            <td class="border px-4 py-2">{{ item.sjtp_cd }}</td>
-          
-            <td class="border px-4 py-2">{{ item.jsclfs }}</td>
-          
-            <td class="border px-4 py-2">{{ item.sjbgsj }}</td>
-          
-            <td class="border px-4 py-2">{{ item.czbh }}</td>
-          
-            <td class="border px-4 py-2">{{ item.czmc }}</td>
-          
-            <td class="border px-4 py-2">{{ item.czlx_cd }}</td>
-          
-            <td class="border px-4 py-2">{{ item.jcnd }}</td>
-          
-            <td class="border px-4 py-2">{{ item.czdz }}</td>
-          
-            <td class="border px-4 py-2">{{ item.zdmj }}</td>
-          
-            <td class="border px-4 py-2">{{ item.geom }}</td>
-          
-            <td class="border px-4 py-2">{{ item.jzsjylfw }}</td>
-          
-            <td class="border px-4 py-2">{{ item.fzsjylfw }}</td>
-          
-            <td class="border px-4 py-2">{{ item.jgysjl_cd }}</td>
-          
-            <td class="border px-4 py-2">{{ item.geom_bhfw }}</td>
-          
-            <td class="border px-4 py-2">{{ item.zzcqqps }}</td>
-          
-            <td class="border px-4 py-2">{{ item.czfzr }}</td>
-          
-            <td class="border px-4 py-2">{{ item.fzrlxfs }}</td>
-          
-            <td class="border px-4 py-2">{{ item.bz }}</td>
-          
-            <td class="border px-4 py-2">{{ item.jsdw }}</td>
-          
-            <td class="border px-4 py-2">{{ item.jgysrq }}</td>
-          
-            <td class="border px-4 py-2">{{ item.syzt_cd }}</td>
-          
-            <td class="border px-4 py-2">{{ item.bh }}</td>
-          
-            <td class="border px-4 py-2">{{ item.czjz }}</td>
-          
-            <td class="border px-4 py-2">{{ item.fzrq }}</td>
-          
-            <td class="border px-4 py-2">{{ item.dqrq }}</td>
-          
-            <td class="border px-4 py-2">{{ item.rgql }}</td>
-          
-            <td class="border px-4 py-2">{{ item.cqrj }}</td>
-          
-            <td class="border px-4 py-2">{{ item.sjhqfs }}</td>
-          
-            <td class="border px-4 py-2">{{ item.sjtbr }}</td>
-          
-            <td class="border px-4 py-2">{{ item.sjcrsj }}</td>
-          
-            <td class="border px-4 py-2">{{ item.geom_lon }}</td>
-          
-            <td class="border px-4 py-2">{{ item.geom_lat }}</td>
-          
-            <td class="border px-4 py-2">{{ item.geom_bhfw_lon }}</td>
-          
-            <td class="border px-4 py-2">{{ item.geom_bhfw_lat }}</td>
-          
-            <td class="border px-4 py-2">{{ item.sync_status }}</td>
-          
-            <td class="border px-4 py-2">{{ item.locked }}</td>
-          
-            <td class="border px-4 py-2">{{ item.sync_time }}</td>
-          
-          <td class="border px-4 py-2">
-            <button @click="editItem(item)">Edit</button>
-            <button @click="deleteItem(item.id)">Delete</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+
+    <el-table :data="items" style="width: 100%">
+      
+        <el-table-column prop="id" label="" />
+      
+        <el-table-column prop="pch" label="批次流水号" />
+      
+        <el-table-column prop="oid" label="原始数据id" />
+      
+        <el-table-column prop="qytyxydm" label="信用代码" />
+      
+        <el-table-column prop="xzqhbm" label="所属区域编码" />
+      
+        <el-table-column prop="sjtp_cd" label="数据类型" />
+      
+        <el-table-column prop="jsclfs" label="接收处理方式" />
+      
+        <el-table-column prop="sjbgsj" label="数据变更时间" />
+      
+        <el-table-column prop="czbh" label="企业系统内的厂站编号" />
+      
+        <el-table-column prop="czmc" label="厂站名称" />
+      
+        <el-table-column prop="czlx_cd" label="厂站类型" />
+      
+        <el-table-column prop="jcnd" label="建设年代" />
+      
+        <el-table-column prop="czdz" label="厂站地址" />
+      
+        <el-table-column prop="zdmj" label="占地面积" />
+      
+        <el-table-column prop="geom" label="经纬度geomtry" />
+      
+        <el-table-column prop="jzsjylfw" label="进站设计压力范围" />
+      
+        <el-table-column prop="fzsjylfw" label="出站设计压力范围" />
+      
+        <el-table-column prop="jgysjl_cd" label="竣工验收结论" />
+      
+        <el-table-column prop="geom_bhfw" label="保护范围geomtry" />
+      
+        <el-table-column prop="zzcqqps" label="自主产权气瓶数量" />
+      
+        <el-table-column prop="czfzr" label="厂站负责人" />
+      
+        <el-table-column prop="fzrlxfs" label="厂站负责人联系方式" />
+      
+        <el-table-column prop="bz" label="备注" />
+      
+        <el-table-column prop="jsdw" label="建设单位名称" />
+      
+        <el-table-column prop="jgysrq" label="竣工验收日期" />
+      
+        <el-table-column prop="syzt_cd" label="使用状态" />
+      
+        <el-table-column prop="bh" label="充装证编号（厂站为充装站时填写）" />
+      
+        <el-table-column prop="czjz" label="充装介质（厂站为充装站时填写）" />
+      
+        <el-table-column prop="fzrq" label="发证日期（厂站为充装站时填写）" />
+      
+        <el-table-column prop="dqrq" label="充装证到期日期（厂站为充装站时填写）" />
+      
+        <el-table-column prop="rgql" label="日供气量，单位:立方米" />
+      
+        <el-table-column prop="cqrj" label="厂站储气容积，单位:立方米" />
+      
+        <el-table-column prop="sjhqfs" label="数据获取方式，1=企业对接,2=平台对接,3=主管部门对接,4=填报,5=其他" />
+      
+        <el-table-column prop="sjtbr" label="数据填报人" />
+      
+        <el-table-column prop="sjcrsj" label="数据插入时间" />
+      
+        <el-table-column prop="geom_lon" label="经度" />
+      
+        <el-table-column prop="geom_lat" label="纬度" />
+      
+        <el-table-column prop="geom_bhfw_lon" label="经度" />
+      
+        <el-table-column prop="geom_bhfw_lat" label="纬度" />
+      
+        <el-table-column prop="sync_status" label="同步状态：0-未同步，1-已同步" />
+      
+        <el-table-column prop="locked" label="锁定状态：0-未锁定，1-已锁定" />
+      
+        <el-table-column prop="sync_time" label="最后同步时间" />
+      
+      <el-table-column label="Actions" width="180">
+        <template #default="scope">
+          <el-button size="small" type="primary" @click="editItem(scope.row)">Edit</el-button>
+          <el-button size="small" type="danger" @click="deleteItem(scope.row.id)">Delete</el-button>
+        </template>
+      </el-table-column>
+    </el-table>
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue'
+import { ElMessageBox, ElMessage } from 'element-plus'
 
 const items = ref([])
 
@@ -201,12 +110,24 @@ const fetchItems = async () => {
 }
 
 const deleteItem = async (id) => {
-  await fetch(`/api/ods_p_station_attr/${id}`, { method: 'DELETE' })
-  fetchItems()
+  try {
+    await ElMessageBox.confirm('Are you sure you want to delete this item?', 'Warning', {
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'No',
+      type: 'warning',
+    })
+    await fetch(`/api/ods_p_station_attr/${id}`, { method: 'DELETE' })
+    ElMessage.success('Item deleted successfully')
+    fetchItems()
+  } catch (error) {
+    if (error !== 'cancel') {
+      ElMessage.error('Failed to delete item')
+    }
+  }
 }
 
 const editItem = (item) => {
-  // You can navigate to an edit form page here, e.g., using Vue Router
+  // Navigate to an edit form or open a modal
   console.log('Edit', item)
 }
 

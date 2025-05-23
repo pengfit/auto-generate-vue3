@@ -1,158 +1,134 @@
 <template>
   <div>
     <h2 class="text-xl font-bold mb-4">ods_p_station_hd_attr Form</h2>
-    
-    <form @submit.prevent="submitForm">
+
+    <el-form :model="form" label-width="120px" @submit.prevent>
       
-        <div class="mb-4">
-          <label class="block mb-1 capitalize">pch</label>
-          <input v-model="form.pch" class="border p-2 w-full" />
-        </div>
+        <el-form-item label="批次流水号">
+          <el-input v-model="form.pch" />
+        </el-form-item>
       
-        <div class="mb-4">
-          <label class="block mb-1 capitalize">oid</label>
-          <input v-model="form.oid" class="border p-2 w-full" />
-        </div>
+        <el-form-item label="原始数据id">
+          <el-input v-model="form.oid" />
+        </el-form-item>
       
-        <div class="mb-4">
-          <label class="block mb-1 capitalize">qytyxydm</label>
-          <input v-model="form.qytyxydm" class="border p-2 w-full" />
-        </div>
+        <el-form-item label="信用代码">
+          <el-input v-model="form.qytyxydm" />
+        </el-form-item>
       
-        <div class="mb-4">
-          <label class="block mb-1 capitalize">xzqhbm</label>
-          <input v-model="form.xzqhbm" class="border p-2 w-full" />
-        </div>
+        <el-form-item label="所属区域编码">
+          <el-input v-model="form.xzqhbm" />
+        </el-form-item>
       
-        <div class="mb-4">
-          <label class="block mb-1 capitalize">sjtp_cd</label>
-          <input v-model="form.sjtp_cd" class="border p-2 w-full" />
-        </div>
+        <el-form-item label="数据类型">
+          <el-input v-model="form.sjtp_cd" />
+        </el-form-item>
       
-        <div class="mb-4">
-          <label class="block mb-1 capitalize">jsclfs</label>
-          <input v-model="form.jsclfs" class="border p-2 w-full" />
-        </div>
+        <el-form-item label="接收处理方式">
+          <el-input v-model="form.jsclfs" />
+        </el-form-item>
       
-        <div class="mb-4">
-          <label class="block mb-1 capitalize">sjbgsj</label>
-          <input v-model="form.sjbgsj" class="border p-2 w-full" />
-        </div>
+        <el-form-item label="数据变更时间">
+          <el-input v-model="form.sjbgsj" />
+        </el-form-item>
       
-        <div class="mb-4">
-          <label class="block mb-1 capitalize">yhly_cd</label>
-          <input v-model="form.yhly_cd" class="border p-2 w-full" />
-        </div>
+        <el-form-item label="隐患来源">
+          <el-input v-model="form.yhly_cd" />
+        </el-form-item>
       
-        <div class="mb-4">
-          <label class="block mb-1 capitalize">fk_cz_id</label>
-          <input v-model="form.fk_cz_id" class="border p-2 w-full" />
-        </div>
+        <el-form-item label="外键">
+          <el-input v-model="form.fk_cz_id" />
+        </el-form-item>
       
-        <div class="mb-4">
-          <label class="block mb-1 capitalize">yhms</label>
-          <input v-model="form.yhms" class="border p-2 w-full" />
-        </div>
+        <el-form-item label="隐患描述">
+          <el-input v-model="form.yhms" />
+        </el-form-item>
       
-        <div class="mb-4">
-          <label class="block mb-1 capitalize">yhdj_cd</label>
-          <input v-model="form.yhdj_cd" class="border p-2 w-full" />
-        </div>
+        <el-form-item label="隐患等级">
+          <el-input v-model="form.yhdj_cd" />
+        </el-form-item>
       
-        <div class="mb-4">
-          <label class="block mb-1 capitalize">yhdz</label>
-          <input v-model="form.yhdz" class="border p-2 w-full" />
-        </div>
+        <el-form-item label="隐患位置地址（厂站地址）">
+          <el-input v-model="form.yhdz" />
+        </el-form-item>
       
-        <div class="mb-4">
-          <label class="block mb-1 capitalize">yhsbsj</label>
-          <input v-model="form.yhsbsj" class="border p-2 w-full" />
-        </div>
+        <el-form-item label="隐患上报时间">
+          <el-input v-model="form.yhsbsj" />
+        </el-form-item>
       
-        <div class="mb-4">
-          <label class="block mb-1 capitalize">pcryxm</label>
-          <input v-model="form.pcryxm" class="border p-2 w-full" />
-        </div>
+        <el-form-item label="排查人员姓名">
+          <el-input v-model="form.pcryxm" />
+        </el-form-item>
       
-        <div class="mb-4">
-          <label class="block mb-1 capitalize">pcdwmc</label>
-          <input v-model="form.pcdwmc" class="border p-2 w-full" />
-        </div>
+        <el-form-item label="排查单位名称（厂站巡检填燃气企业名称）">
+          <el-input v-model="form.pcdwmc" />
+        </el-form-item>
       
-        <div class="mb-4">
-          <label class="block mb-1 capitalize">pcfs_cd</label>
-          <input v-model="form.pcfs_cd" class="border p-2 w-full" />
-        </div>
+        <el-form-item label="排查方式">
+          <el-input v-model="form.pcfs_cd" />
+        </el-form-item>
       
-        <div class="mb-4">
-          <label class="block mb-1 capitalize">zgqx</label>
-          <input v-model="form.zgqx" class="border p-2 w-full" />
-        </div>
+        <el-form-item label="整改期限">
+          <el-input v-model="form.zgqx" />
+        </el-form-item>
       
-        <div class="mb-4">
-          <label class="block mb-1 capitalize">zgyq</label>
-          <input v-model="form.zgyq" class="border p-2 w-full" />
-        </div>
+        <el-form-item label="整改要求">
+          <el-input v-model="form.zgyq" />
+        </el-form-item>
       
-        <div class="mb-4">
-          <label class="block mb-1 capitalize">zgsj</label>
-          <input v-model="form.zgsj" class="border p-2 w-full" />
-        </div>
+        <el-form-item label="整改时间">
+          <el-input v-model="form.zgsj" />
+        </el-form-item>
       
-        <div class="mb-4">
-          <label class="block mb-1 capitalize">zgzt_cd</label>
-          <input v-model="form.zgzt_cd" class="border p-2 w-full" />
-        </div>
+        <el-form-item label="整改状态（默认为未整改；整改后再次推送,状态变为‘已整改未销号’）">
+          <el-input v-model="form.zgzt_cd" />
+        </el-form-item>
       
-        <div class="mb-4">
-          <label class="block mb-1 capitalize">zrrxm</label>
-          <input v-model="form.zrrxm" class="border p-2 w-full" />
-        </div>
+        <el-form-item label="隐患责任人姓名">
+          <el-input v-model="form.zrrxm" />
+        </el-form-item>
       
-        <div class="mb-4">
-          <label class="block mb-1 capitalize">sjhqfs</label>
-          <input v-model="form.sjhqfs" class="border p-2 w-full" />
-        </div>
+        <el-form-item label="数据获取方式">
+          <el-input v-model="form.sjhqfs" />
+        </el-form-item>
       
-        <div class="mb-4">
-          <label class="block mb-1 capitalize">sjtbr</label>
-          <input v-model="form.sjtbr" class="border p-2 w-full" />
-        </div>
+        <el-form-item label="数据填报人">
+          <el-input v-model="form.sjtbr" />
+        </el-form-item>
       
-        <div class="mb-4">
-          <label class="block mb-1 capitalize">sjcrsj</label>
-          <input v-model="form.sjcrsj" class="border p-2 w-full" />
-        </div>
+        <el-form-item label="数据插入时间">
+          <el-input v-model="form.sjcrsj" />
+        </el-form-item>
       
-        <div class="mb-4">
-          <label class="block mb-1 capitalize">fk_xjjl_id</label>
-          <input v-model="form.fk_xjjl_id" class="border p-2 w-full" />
-        </div>
+        <el-form-item label="外键">
+          <el-input v-model="form.fk_xjjl_id" />
+        </el-form-item>
       
-        <div class="mb-4">
-          <label class="block mb-1 capitalize">sync_status</label>
-          <input v-model="form.sync_status" class="border p-2 w-full" />
-        </div>
+        <el-form-item label="同步状态：0-未同步，1-已同步">
+          <el-input v-model="form.sync_status" />
+        </el-form-item>
       
-        <div class="mb-4">
-          <label class="block mb-1 capitalize">locked</label>
-          <input v-model="form.locked" class="border p-2 w-full" />
-        </div>
+        <el-form-item label="锁定状态：0-未锁定，1-已锁定">
+          <el-input v-model="form.locked" />
+        </el-form-item>
       
-        <div class="mb-4">
-          <label class="block mb-1 capitalize">sync_time</label>
-          <input v-model="form.sync_time" class="border p-2 w-full" />
-        </div>
+        <el-form-item label="最后同步时间">
+          <el-input v-model="form.sync_time" />
+        </el-form-item>
       
 
-      <button type="submit" class="bg-blue-500 text-white px-4 py-2">Save</button>
-    </form>
+      <el-form-item>
+        <el-button type="primary" @click="submitForm">Save</el-button>
+        <el-button @click="goBack">Cancel</el-button>
+      </el-form-item>
+    </el-form>
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import { ElMessage } from 'element-plus'
 
 const form = ref({})
 const route = useRoute()
@@ -170,11 +146,20 @@ onMounted(async () => {
 const submitForm = async () => {
   const method = id ? 'PUT' : 'POST'
   const url = id ? `/api/ods_p_station_hd_attr/${id}` : `/api/ods_p_station_hd_attr`
-  await fetch(url, {
-    method,
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(form.value)
-  })
+  try {
+    await fetch(url, {
+      method,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(form.value),
+    })
+    ElMessage.success('Saved successfully')
+    router.push('/ods_p_station_hd_attr')
+  } catch (error) {
+    ElMessage.error('Failed to save')
+  }
+}
+
+const goBack = () => {
   router.push('/ods_p_station_hd_attr')
 }
 </script>
