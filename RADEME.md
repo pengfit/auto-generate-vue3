@@ -18,7 +18,7 @@ Auto-generate Vue 3 CRUD pages from Sequelize models (based on MySQL tables) usi
 1. **Install dependencies**  
 
 ```bash
-npm install sequelize sqlite3 ejs element-plus
+npm install sequelize sqlite3 ejs element-plus vue
 ```
 
 2. **Generate Sequelize models**  
