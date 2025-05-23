@@ -1,0 +1,52 @@
+<template>
+  <div>
+    <h2 class="text-xl font-bold mb-4"><%= tableName %> List</h2>
+    
+    <table class="table-auto w-full border">
+      <thead>
+        <tr>
+          <% fields.forEach(f => { %>
+            <th class="border px-4 py-2 text-left"><%= f.name %></th>
+          <% }) %>
+          <th class="border px-4 py-2">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="item in items" :key="item.id">
+          <% fields.forEach(f => { %>
+            <td class="border px-4 py-2">{{ item.<%= f.name %> }}</td>
+          <% }) %>
+          <td class="border px-4 py-2">
+            <button @click="editItem(item)">Edit</button>
+            <button @click="deleteItem(item.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</template>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const items = ref([])
+
+const fetchItems = async () => {
+  const res = await fetch('/api/<%= tableName %>')
+  items.value = await res.json()
+}
+
+const deleteItem = async (id) => {
+  await fetch(`/api/<%= tableName %>/${id}`, { method: 'DELETE' })
+  fetchItems()
+}
+
+const editItem = (item) => {
+  // You can navigate to an edit form page here, e.g., using Vue Router
+  console.log('Edit', item)
+}
+
+onMounted(() => {
+  fetchItems()
+})
+</script>

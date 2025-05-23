@@ -1,0 +1,45 @@
+<template>
+  <div>
+    <h2 class="text-xl font-bold mb-4"><%= tableName %> Form</h2>
+    
+    <form @submit.prevent="submitForm">
+      <% fields.forEach(f => { if (f.name !== 'id') { %>
+        <div class="mb-4">
+          <label class="block mb-1 capitalize"><%= f.name %></label>
+          <input v-model="form.<%= f.name %>" class="border p-2 w-full" />
+        </div>
+      <% }}); %>
+
+      <button type="submit" class="bg-blue-500 text-white px-4 py-2">Save</button>
+    </form>
+  </div>
+</template>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+
+const form = ref({})
+const route = useRoute()
+const router = useRouter()
+
+const id = route.params.id
+
+onMounted(async () => {
+  if (id) {
+    const res = await fetch(`/api/<%= tableName %>/${id}`)
+    form.value = await res.json()
+  }
+})
+
+const submitForm = async () => {
+  const method = id ? 'PUT' : 'POST'
+  const url = id ? `/api/<%= tableName %>/${id}` : `/api/<%= tableName %>`
+  await fetch(url, {
+    method,
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(form.value)
+  })
+  router.push('/<%= tableName %>')
+}
+</script>
