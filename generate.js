@@ -52,9 +52,9 @@ for (const [modelName, model] of Object.entries(models)) {
   fs.writeFileSync(path.join(outputDir, `${modelName}List.vue`), listContent)
 
   // FormView
-  const formTpl = fs.readFileSync(path.join(templatesDir, 'FormView.vue.ejs'), 'utf-8')
-  const formContent = ejs.render(formTpl, templateData)
-  fs.writeFileSync(path.join(outputDir, `${modelName}Form.vue`), formContent)
+  // const formTpl = fs.readFileSync(path.join(templatesDir, 'FormView.vue.ejs'), 'utf-8')
+  // const formContent = ejs.render(formTpl, templateData)
+  // fs.writeFileSync(path.join(outputDir, `${modelName}Form.vue`), formContent)
 
   console.log(`✅ Generated Vue files for model: ${modelName}`)
 }
