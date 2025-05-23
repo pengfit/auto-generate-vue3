@@ -22,7 +22,7 @@ npm install sequelize sqlite3 ejs
 
 2. **Generate Sequelize models**  
 ```bash
-npx sequelize-auto -o "./models" -d dbname -h host -u user -p port -x pass -e mysql
+npx sequelize-auto -h host -d dbname -u user -x password -p 3306 -e mysql -o "./models"
 ```
 
 3. **Create/Update Vue templates**  
