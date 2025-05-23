@@ -1,6 +1,16 @@
 <template>
   <div>
-    <h2>ods_p_station_hd_attr List</h2>
+     <!-- 搜索条件 -->
+    <el-form :model="searchQuery" label-width="50px" inline class="search-form">
+      <el-row :gutter="20">
+        <el-col :xs="24" :sm="24" :md="8" :lg="6" :xl="6">
+          <el-form-item>
+            <el-button type="primary" @click="handleSearch" :icon="Search">查询</el-button>
+            <el-button @click="handleReset" :icon="Refresh">重置</el-button>
+          </el-form-item>
+        </el-col>
+      </el-row>
+    </el-form>
     <el-table :data="tableData || []" style="width: 100%">
       
         <el-table-column
